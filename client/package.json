@@ -1,6 +1,5 @@
 {
   "name": "frontend",
-  "homepage": "https://theExperienced.github.io/8200ac",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -38,9 +37,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "gh-pages": "^3.1.0"
   },
   "proxy": "http://localhost:5000"
 }
