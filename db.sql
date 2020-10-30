@@ -1,18 +1,9 @@
-CREATE DATABASE perntodo;
+CREATE DATABASE postgres;
 
-CREATE TABLE todo(
+
+
+CREATE TABLE todos(
   todo_id SERIAL PRIMARY KEY,
-  done BOOLEAN NOT NULL DEFAULT FALSE,
-  content TEXT NOT NULL
-);
-
-
-
-
-CREATE TABLE users(
-  code_user SERIAL PRIMARY KEY,
-  email VARCHAR(150) UNIQUE NOT NULL,
-  name VARCHAR(100) NOT NULL,
-  password CHAR(32) NOT NULL,
-  status BOOLEAN NOT NULL DEFAULT TRUE
+  content TEXT NOT NULL,
+  done BOOLEAN NOT NULL
 );
