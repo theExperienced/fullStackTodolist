@@ -12,7 +12,7 @@ const { getError } = require('./controllers/error');
 const app = express();
 
 const PORT = process.env.PORT || 8080;
-app.use(express.static('client/build'));
+// app.use(express.static('client/build'));
 
 if(process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, 'client/build')));
@@ -22,7 +22,7 @@ if(process.env.NODE_ENV === 'production') {
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
