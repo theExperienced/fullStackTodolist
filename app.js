@@ -41,6 +41,6 @@ initDb((err, client) => {
         throw Error(err);
     }else {
         console.log('connected to mongo and thus launching server');
-        app.listen(8080); 
+        app.listen(process.env.PORT || 8080); 
     }
 });
