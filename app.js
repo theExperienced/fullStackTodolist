@@ -12,6 +12,7 @@ const { getError } = require('./controllers/error');
 
 const app = express();
 
+const PORT = process.env.PORT || 8080;
 // app.use(express.static('client/build'));
 
 if(process.env.NODE_ENV === 'production') {
@@ -34,13 +35,13 @@ app.use('/todos', todosRouter);
 app.use(getError); 
 
 
+app.listen(PORT); 
 ////mongoDB
 
-initDb((err, client) => {
-    if(err) {
-        throw Error(err);
-    }else {
-        console.log('connected to mongo and thus launching server');
-        app.listen(process.env.PORT || 8080); 
-    }
-});
+// initDb((err, client) => {
+//     if(err) {
+//         throw Error(err);
+//     }else {
+//         console.log('connected to mongo and thus launching server', process.env.PORT);
+//     }
+// });
