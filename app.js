@@ -13,7 +13,7 @@ const { getError } = require('./controllers/error');
 const app = express();
 
 const PORT = process.env.PORT || 8080;
-// app.use(express.static('client/build'));
+app.use(express.static('client/build'));
 
 if(process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, 'client/build')));
