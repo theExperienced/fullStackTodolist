@@ -32,7 +32,9 @@ app.use((req, res, next) => {
 
 app.use('/todos', todosRouter);
 
-app.use(getError); 
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client/build/index.html"));
+});
 
 
 app.listen(PORT); 
