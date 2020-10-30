@@ -9,15 +9,13 @@ const initDb = callback => {
     if(_db) {
         return callback(null, _db);
     }
-    console.log('before inidDb');
+
     MongoClient.connect(fullUrl)
         .then(client => {
             _db = client;
-            console.log('clienting');
             return callback(null, client);
         })
         .catch(err => {
-            console.log(err);
             return callback(err);
         })
 }

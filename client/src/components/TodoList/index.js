@@ -11,9 +11,7 @@ const TodoList = ({ isDone, todos }) => {
             <div className='todoList'>
                 {
                     todos.length? 
-                     todos.map(/*({todo_id, content})*/todo => {
-                         console.log('mapping todos in list', todos, todo, isDone)
-                         const {todo_id, content} = todo;
+                     todos.map(({todo_id, content}) => {
                         return <Todo key={todo_id} todo_id={todo_id} content={content} isDone={isDone}/>
                     }):null
                 }

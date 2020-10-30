@@ -3,23 +3,13 @@ import styled, { createGlobalStyle } from 'styled-components';
 const StyledApp = styled.div`
     display: grid;
     height: 100vh;
-    ${'' /* overflow: hidden; */}
     grid-template-rows: 50vh;
 `;
 
 export const NormalizedStyle = createGlobalStyle`
-    ${'' /* @import url('https://fonts.googleapis.com/css?family=Bebas+Neue|Solway|Raleway|Montserrat&display=swap'); */}
-
     :root {
         font-size: 100%;
     }
-
-    ${'' /* $page-colors: (
-        0: 170, 120, 166,
-        1: 184, 186, 200,
-        2: 180, 214, 211,
-        3: 178, 255, 214,
-    ) */}
 
     * {
         margin: 0;

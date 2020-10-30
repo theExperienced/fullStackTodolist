@@ -3,7 +3,6 @@ export const ActionTypes = {
 };
 
 export const reducer = (state, action) => {
-    console.log('inside reducer');
     const { type, payload } = action;
     switch(type) {
         case ActionTypes.OnInputChange:

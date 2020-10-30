@@ -8,17 +8,10 @@ const useAddTodo = () => {
 
     const [ mutateAddTodo, mutationState ] = useMutation(addTodo, {
         onMutate: newTodo => {
-            console.log('MUTATING');
-            // Cancel any outgoing refetches (so they don't overwrite our optimistic update)
-            queryCache.cancelQueries('todos')
-    
-            // Snapshot the previous value
-            const previousTodos = queryCache.getQueryData('todos')
-    
-            // Optimistically update to the new value
+            queryCache.cancelQueries('todos');
+            const previousTodos = queryCache.getQueryData('todos');
             queryCache.setQueryData('todos', old => ({done:old.done, undone: [newTodo, ...old.undone]}))
     
-            // Return the snapshotted value
             return () => queryCache.setQueryData('todos', previousTodos)
         },
         onError: (err, newTodo, rollback) => {

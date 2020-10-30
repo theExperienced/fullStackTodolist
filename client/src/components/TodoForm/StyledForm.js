@@ -11,13 +11,10 @@ const StyledForm = styled.div`
     }
 
     & input {
-        ${'' /* display: block; */}
         flex: 1;
         border-radius: 5px 0 0 5px;
         font-size: 1.2rem;
-        padding: 0 .85rem;
-        ${'' /* font-weight: 100; */}
-        ${'' /* letter-spacing: 1px; */}
+        padding: 1.6rem;
         color: rgba(0,0,0,.25);
         line-height: 4.7;
         box-shadow: 0 0 5px rgba(255,255,255,.5);

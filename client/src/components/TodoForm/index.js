@@ -15,7 +15,7 @@ const TodoInput = () => {
     const queryCache = useQueryCache();
     const { mutateAddTodo, mutationState } = useAddTodo();
 
-    const handleChange = useCallback(e => {                  //not sure useCallback is needed
+    const handleChange = useCallback(e => {             
         console.log('original value', e.target.value);
         dispatch({       
             type: ActionTypes.OnInputChange,
@@ -23,7 +23,7 @@ const TodoInput = () => {
         })
     }, []);
 
-    const handleSubmit = useCallback(async e => {                     //not sure useCallback is needed
+    const handleSubmit = useCallback(async e => {          
         e.preventDefault();
         const content = e.target[0].value;
         console.log('SUBMITTED');
@@ -36,13 +36,10 @@ const TodoInput = () => {
             const newTodo = await mutateAddTodo({content});
             console.log('added newTodo', newTodo);
             addTodoMongo(newTodo.todo_id, content)
-            .then(res => {
-                console.log('res from mongo add', res);
-            });
+            .then(res => console.log(res))
+            .catch(err => console.log(err));
         }catch(err) {
-            console.log(err => {
-                console.log('err from mongo add', err);
-            });
+            console.log(err);
         }
     }, []);
 

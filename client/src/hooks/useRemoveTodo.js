@@ -15,7 +15,7 @@ const useRemoveTodo = () => {
             queryCache.cancelQueries('todos');
             const currentTodos = queryCache.getQueryData('todos');
             queryCache.setQueryData('todos', currentData => makeRemovedTodos(currentData, todo_id, isDone));
-            console.log('madeMutatedTodos', currentTodos, todo_id, isDone);
+            
             return currentTodos;
         },
         onError: (err, newTodo, rollback) => {

@@ -23,11 +23,8 @@ const renderBody = (status, todos) => {
 }
 
 const Body = () => {
-    const { data: todos, status, error, isFetching } = useTodos();       ////ASSUMING TODOS IS AN OBJECT SPLIT INTO DONE AND UNDONE
-    console.log('TODOS IN BODY', todos, status, isFetching);
-    console.log('ERROR IN BODY', error);
-    // const { done, undone } = todos;
-
+    const { data: todos, status, error, isFetching } = useTodos();   
+    
     return (
         <StyledBody>
             {renderBody(status, todos)}
