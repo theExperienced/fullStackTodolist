@@ -33,7 +33,7 @@ app.use((req, res, next) => {
 app.use('/todos', todosRouter);
 
 app.get("*", (req, res) => {
-    res.send('helllo');
+    res.sendFile(path.join(__dirname, "client/build/index.html"));
 });
 
 
