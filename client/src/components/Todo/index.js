@@ -14,12 +14,11 @@ const Todo = ({ todo_id, content, isDone }) => {
     const handleToggle = async () => {
         console.log('HANDLING MUTATE', todo_id, isDone)
         try {
-            const todo = await mutateToggle({
+            await mutateToggle({
                 todo: {todo_id, content},
                 isDone: !!isDone
             });
 
-            console.log('awaited todo', todo);
             
             toggleTodoMongo(todo_id, isDone)
             .then(res => {
@@ -36,8 +35,7 @@ const Todo = ({ todo_id, content, isDone }) => {
 
     const handleRemove = async () => {
         try {
-            const todo = await mutateRemove({todo_id, isDone: !!isDone});
-            console.log('was to remove', todo)
+            await mutateRemove({todo_id, isDone: !!isDone});
             
             removeTodoMongo(todo_id)
             .then(res => {
