@@ -39,12 +39,14 @@ app.get("*", (req, res) => {
 
 
 app.listen(PORT); 
+
+
 ////mongoDB
 
-// initDb((err, client) => {
-//     if(err) {
-//         throw Error(err);
-//     }else {
-//         console.log('connected to mongo and thus launching server', process.env.PORT);
-//     }
-// });
+initDb((err, client) => {
+    if(err) {
+        throw Error(err);
+    }else {
+        console.log('connected to mongo and thus launching server', process.env.PORT);
+    }
+});

@@ -1,7 +1,7 @@
 const mongodb = require('mongodb');
 const MongoClient = mongodb.MongoClient;
 
-const fullUrl = process.env.MONGO_URL || 'mongodb+srv://abu8lele:abu8lele@work.14nuw.mongodb.net/8200ac?retryWrites=true&w=majority';
+const fullUrl = 'mongodb+srv://abu8lele:abu8lele@work.14nuw.mongodb.net/8200ac?retryWrites=true&w=majority';
 
 let _db;
 
