@@ -5,5 +5,5 @@ CREATE DATABASE postgres;
 CREATE TABLE todos(
   todo_id SERIAL PRIMARY KEY,
   content TEXT NOT NULL,
-  done BOOLEAN NOT NULL
+  done BOOLEAN NOT NULL DEFAULT false
 );
